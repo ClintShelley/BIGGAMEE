@@ -9,6 +9,8 @@ using UnityEngine.AI;
 
 public class NPC : MonoBehaviour
 {
+    [SerializeField]
+    NPCPatrolPoint[] _patrolPoints;
     NavMeshAgent _navMeshAgent;
     FiniteStateMachine _finiteStateMachine;
 
@@ -20,11 +22,19 @@ public class NPC : MonoBehaviour
 
     public void Start()
     {
-        
+
     }
 
     public void Update()
     {
-        
+
+    }
+
+    public NPCPatrolPoint[] PatrolPoints
+    {
+        get
+        {
+            return _patrolPoints;
+        }
     }
 }
