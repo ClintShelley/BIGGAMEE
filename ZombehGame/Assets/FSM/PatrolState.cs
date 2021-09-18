@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using UnityEngine.AI;
+using NPCCode;
 
 [CreateAssetMenu(fileName="PatrolState", menuName = "Unity-FSM/States/Patrol", order = 2)]
 public class PatrolState : AbstractFSMState

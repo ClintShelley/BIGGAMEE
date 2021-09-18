@@ -2,64 +2,67 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCPatrolPoint : Waypoint
+namespace NPCCode
 {
-    [SerializeField]
-    protected float _connectivityRadius = 50f;
-
-    List<NPCPatrolPoint> _connections;
-
-    public void Start()
+    public class NPCPatrolPoint : Waypoint
     {
-        GameObject[] allWaypoints = GameObject.FindGameObjectsWithTag("Waypoint");
+        [SerializeField]
+        protected float _connectivityRadius = 50f;
 
-        _connections = new List<NPCPatrolPoint>();
+        List<NPCPatrolPoint> _connections;
 
-        for (int i = 0; i < allWaypoints.Length; i++)
+        public void Start()
         {
-            NPCPatrolPoint nextWaypoint = allWaypoints[i].GetComponent<NPCPatrolPoint>();
+            GameObject[] allWaypoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
-            if (nextWaypoint != null)
+            _connections = new List<NPCPatrolPoint>();
+
+            for (int i = 0; i < allWaypoints.Length; i++)
             {
-                if (Vector3.Distance(this.transform.position, nextWaypoint.transform.position) <= _connectivityRadius && nextWaypoint != this)
+                NPCPatrolPoint nextWaypoint = allWaypoints[i].GetComponent<NPCPatrolPoint>();
+
+                if (nextWaypoint != null)
                 {
-                    _connections.Add(nextWaypoint);
+                    if (Vector3.Distance(this.transform.position, nextWaypoint.transform.position) <= _connectivityRadius && nextWaypoint != this)
+                    {
+                        _connections.Add(nextWaypoint);
+                    }
                 }
             }
         }
-    }
 
-    public override void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, debugDrawRadius);
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, _connectivityRadius);
-    }
-
-    public NPCPatrolPoint NextWaypoint(NPCPatrolPoint previousWaypoint)
-    {
-        if (_connections.Count == 0)
+        public override void OnDrawGizmos()
         {
-            Debug.LogError("Insufficient waypoint count");
-            return null;
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, debugDrawRadius);
+
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, _connectivityRadius);
         }
-        else if (_connections.Count == 1 && _connections.Contains(previousWaypoint))
+
+        public NPCPatrolPoint NextWaypoint(NPCPatrolPoint previousWaypoint)
         {
-            return previousWaypoint;
-        }
-        else
-        {
-            NPCPatrolPoint nextWaypoint;
-            int nextIndex = 0;
-            do
+            if (_connections.Count == 0)
             {
-                nextIndex = UnityEngine.Random.Range(0, _connections.Count);
-                nextWaypoint = _connections[nextIndex];
-            } while (nextWaypoint == previousWaypoint);
+                Debug.LogError("Insufficient waypoint count");
+                return null;
+            }
+            else if (_connections.Count == 1 && _connections.Contains(previousWaypoint))
+            {
+                return previousWaypoint;
+            }
+            else
+            {
+                NPCPatrolPoint nextWaypoint;
+                int nextIndex = 0;
+                do
+                {
+                    nextIndex = UnityEngine.Random.Range(0, _connections.Count);
+                    nextWaypoint = _connections[nextIndex];
+                } while (nextWaypoint == previousWaypoint);
 
-            return nextWaypoint;
+                return nextWaypoint;
+            }
         }
     }
 }

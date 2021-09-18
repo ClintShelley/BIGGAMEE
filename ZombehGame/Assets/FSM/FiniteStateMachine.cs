@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using NPCCode;
 
 public class FiniteStateMachine : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class FiniteStateMachine : MonoBehaviour
     public void Awake()
     {
         _currentState = null;
-
         _fsmStates = new Dictionary<FSMStateType, AbstractFSMState>();
 
         NavMeshAgent navMeshAgent = this.GetComponent<NavMeshAgent>();
@@ -23,8 +23,8 @@ public class FiniteStateMachine : MonoBehaviour
         foreach(AbstractFSMState state in _validStates)
         {
             state.SetExecutingFSM(this);
-            state.setExecutingNPC(npc);
-            state.setNavMeshAgent(navMeshAgent);
+            state.SetExecutingNPC(npc);
+            state.SetNavMeshAgent(navMeshAgent);
             _fsmStates.Add(state.StateType, state);
         }
     }

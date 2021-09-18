@@ -5,36 +5,39 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent), typeof(FiniteStateMachine))]
-
-public class NPC : MonoBehaviour
+namespace NPCCode
 {
-    [SerializeField]
-    NPCPatrolPoint[] _patrolPoints;
-    NavMeshAgent _navMeshAgent;
-    FiniteStateMachine _finiteStateMachine;
+    [RequireComponent(typeof(NavMeshAgent), typeof(FiniteStateMachine))]
 
-    public void Awake()
+    public class NPC : MonoBehaviour
     {
-        _navMeshAgent = this.GetComponent<NavMeshAgent>();
-        _finiteStateMachine = this.GetComponent<FiniteStateMachine>();
-    }
+        [SerializeField]
+        NPCPatrolPoint[] _patrolPoints;
+        NavMeshAgent _navMeshAgent;
+        FiniteStateMachine _finiteStateMachine;
 
-    public void Start()
-    {
-
-    }
-
-    public void Update()
-    {
-
-    }
-
-    public NPCPatrolPoint[] PatrolPoints
-    {
-        get
+        public void Awake()
         {
-            return _patrolPoints;
+            _navMeshAgent = this.GetComponent<NavMeshAgent>();
+            _finiteStateMachine = this.GetComponent<FiniteStateMachine>();
+        }
+
+        public void Start()
+        {
+
+        }
+
+        public void Update()
+        {
+
+        }
+
+        public NPCPatrolPoint[] PatrolPoints
+        {
+            get
+            {
+                return _patrolPoints;
+            }
         }
     }
 }
