@@ -11,7 +11,6 @@ public class FiniteStateMachine : MonoBehaviour
     [SerializeField]
     List<AbstractFSMState> _validStates;
     Dictionary<FSMStateType, AbstractFSMState> _fsmStates;
-    //[SerializeField] GameObject player;
     
 
     public void Awake()

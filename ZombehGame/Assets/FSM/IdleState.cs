@@ -25,7 +25,6 @@ public class IdleState : AbstractFSMState
 
         if (EnteredState)
         {
-            Debug.Log("Entered Idle State");
             _totalDuration = 0f;
         }
         return EnteredState;
@@ -36,7 +35,6 @@ public class IdleState : AbstractFSMState
         if (EnteredState)
         {
             _totalDuration += Time.deltaTime;
-            Debug.Log("Entered Update State" +_totalDuration +" seconds");
 
             if(_totalDuration >= _idleDuration)
             {
@@ -48,7 +46,6 @@ public class IdleState : AbstractFSMState
     public override bool ExitState()
     {
         base.ExitState();
-        Debug.Log("Entered Exit State");
         return true;
     }
 }

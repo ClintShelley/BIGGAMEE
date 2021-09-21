@@ -29,7 +29,7 @@ public class PatrolState : AbstractFSMState
 
             if (_patrolPoints == null || _patrolPoints.Length == 0)
             {
-                Debug.LogError("PatrolState: Failed to grab patrol points from the NPC");
+
             }
             else
             {
@@ -57,7 +57,6 @@ public class PatrolState : AbstractFSMState
             
              if (Vector3.Distance(_navMeshAgent.transform.position, player.transform.position) <= 8f)
             {
-                Debug.Log("ho");
                 _fsm.EnterState(FSMStateType.ATTACK);
             }
             else if (Vector3.Distance(_navMeshAgent.transform.position, _patrolPoints[_patrolPointIndex].transform.position) >= 9f)

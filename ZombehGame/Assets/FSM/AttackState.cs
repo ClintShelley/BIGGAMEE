@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AttackState", menuName = "Unity-FSM/States/Attack", order = 3)]
 public class AttackState : AbstractFSMState
 {
-   // GameObject player = GameObject.FindGameObjectWithTag("Player");
 
     public override void OnEnable()
     {
@@ -19,7 +18,7 @@ public class AttackState : AbstractFSMState
 
         if (EnteredState)
         {
-            Debug.Log("Entered ATTACK State");
+
         }
         return EnteredState;
     }
@@ -42,7 +41,6 @@ public class AttackState : AbstractFSMState
     public override bool ExitState()
     {
         base.ExitState();
-        Debug.Log("Entered Exit State");
         return true;
     }
 }
