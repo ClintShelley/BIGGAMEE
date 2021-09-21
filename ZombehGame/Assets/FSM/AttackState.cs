@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PatrolState", menuName = "Unity-FSM/States/Attack", order = 3)]
+[CreateAssetMenu(fileName = "AttackState", menuName = "Unity-FSM/States/Attack", order = 3)]
 public class AttackState : AbstractFSMState
 {
    // GameObject player = GameObject.FindGameObjectWithTag("Player");
