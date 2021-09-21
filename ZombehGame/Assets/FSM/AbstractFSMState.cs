@@ -18,6 +18,7 @@ public enum FSMStateType
 {
     IDLE,
     PATROL,
+    ATTACK,
 }
 
 public abstract class AbstractFSMState : ScriptableObject
@@ -25,6 +26,7 @@ public abstract class AbstractFSMState : ScriptableObject
     protected NavMeshAgent _navMeshAgent;
     protected NPC _npc;
     protected FiniteStateMachine _fsm;
+    protected GameObject player;
 
     public ExecutionState ExecutionState { get; protected set; }
     public FSMStateType StateType { get; protected set; }
@@ -33,6 +35,9 @@ public abstract class AbstractFSMState : ScriptableObject
     public virtual void OnEnable()
     {
         ExecutionState = ExecutionState.NONE;
+
+        player = GameObject.Find("FirstPersonPlayer");
+       
     }
 
     public virtual bool EnterState()

@@ -1,99 +1,118 @@
 Using pre-set license
 Built from '2020.3/release' branch; Version is '2020.3.1f1 (77a89f25062f) revision 7841951'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19042.1165; Version 2009; 64bit' Language: 'en' Physical Memory: 16337 MB
+OS: 'Windows 10 Home; OS build 19042.1165; Version 2009; 64bit' Language: 'en' Physical Memory: 8100 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-D:\UNITY\2020.3.1f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2020.3.1f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-L:/GITSTUFF/BIGGAME/ZombehGame
+C:/Users/lilsh/OneDrive/Documents/GitHub/BIGGAMEE/ZombehGame
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52507
-Successfully changed project path to: L:/GITSTUFF/BIGGAME/ZombehGame
-L:/GITSTUFF/BIGGAME/ZombehGame
+62407
+Successfully changed project path to: C:/Users/lilsh/OneDrive/Documents/GitHub/BIGGAMEE/ZombehGame
+C:/Users/lilsh/OneDrive/Documents/GitHub/BIGGAMEE/ZombehGame
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 21.15 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 116.90 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.1f1 (77a89f25062f)
-[Subsystems] Discovering subsystems at path D:/UNITY/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path L:/GITSTUFF/BIGGAME/ZombehGame/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/lilsh/OneDrive/Documents/GitHub/BIGGAMEE/ZombehGame/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960M (ID=0x139b)
     Vendor:   
-    VRAM:     8079 MB
-    Driver:   27.21.14.6079
+    VRAM:     4055 MB
+    Driver:   24.21.13.9901
 Initialize mono
-Mono path[0] = 'D:/UNITY/2020.3.1f1/Editor/Data/Managed'
-Mono path[1] = 'D:/UNITY/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'D:/UNITY/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56808
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56804
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/UNITY/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001024 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.005732 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 19.39 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 51.29 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.810 seconds
+- Completed reload, in  3.001 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000455 seconds.
+Registered in 0.001935 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.763 seconds
+- Completed reload, in  1.814 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1123 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 57.2 MB.
-System memory in use after: 57.2 MB.
+System memory in use before: 57.0 MB.
+System memory in use after: 57.0 MB.
 
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1565.
-Total: 1.378900 ms (FindLiveObjects: 0.149800 ms CreateObjectMapping: 0.045200 ms MarkObjects: 1.120900 ms  DeleteObjects: 0.061800 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/FSM/FiniteStateMachine.cs
-  artifactKey: Guid(15d12b32fa69c4a4cbcacfde74d5d95a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FSM/FiniteStateMachine.cs using Guid(15d12b32fa69c4a4cbcacfde74d5d95a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45539262576ba15cc60c5b9457567cd9') in 0.024245 seconds
-  Import took 0.025865 seconds .
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1564.
+Total: 3.633500 ms (FindLiveObjects: 0.267300 ms CreateObjectMapping: 0.101400 ms MarkObjects: 3.108300 ms  DeleteObjects: 0.154200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 827.130421 seconds.
-  path: Assets/FSM/NPCPatrolPoint.cs
-  artifactKey: Guid(322e1b0e4f071894d847e4095e6eaf6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FSM/NPCPatrolPoint.cs using Guid(322e1b0e4f071894d847e4095e6eaf6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44dee1999c173ca6074501e0a6e138bd') in 0.002940 seconds
-  Import took 0.005038 seconds .
+  path: Assets/Bullet.prefab
+  artifactKey: Guid(db2b6585c40bcb64e9a8e412bcbd6a51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Bullet.prefab using Guid(db2b6585c40bcb64e9a8e412bcbd6a51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c096abeb62d3c071af03ebc20468f93') in 1.068749 seconds
+  Import took 1.073268 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.697391 seconds.
-  path: Assets/FSM/NPCPatrolPoint.cs
-  artifactKey: Guid(322e1b0e4f071894d847e4095e6eaf6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FSM/NPCPatrolPoint.cs using Guid(322e1b0e4f071894d847e4095e6eaf6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b59ab5b5fdcb577dd26515646beb703') in 0.001864 seconds
-  Import took 0.003626 seconds .
+  Time since last request: 0.001024 seconds.
+  path: Assets/BulletMat.mat
+  artifactKey: Guid(2aecf39fa33ff6e47a1de6e18a6fe5ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BulletMat.mat using Guid(2aecf39fa33ff6e47a1de6e18a6fe5ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d4f49d18475709e5ee5e57bb4d80198') in 0.823706 seconds
+  Import took 0.827814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000919 seconds.
+  path: Assets/PlayerMat.mat
+  artifactKey: Guid(695da43ed884f1c4ea0cc2cfe083afa3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerMat.mat using Guid(695da43ed884f1c4ea0cc2cfe083afa3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c326142ad853b472e759031a5099c0fc') in 0.024617 seconds
+  Import took 0.028643 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000972 seconds.
+  path: Assets/EnemyMat.mat
+  artifactKey: Guid(122c3f7f095ce094ab8b46ba03790309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EnemyMat.mat using Guid(122c3f7f095ce094ab8b46ba03790309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fa53ade2362c3c59011e29a8f903e55') in 0.024501 seconds
+  Import took 0.028603 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 3.47 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 38.3 MB.
+System memory in use after: 38.3 MB.
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1605.
+Total: 4.601000 ms (FindLiveObjects: 0.467500 ms CreateObjectMapping: 0.140200 ms MarkObjects: 3.886200 ms  DeleteObjects: 0.103500 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
