@@ -27,11 +27,11 @@ public class AttackState : AbstractFSMState
     {
         if (EnteredState)
         {
-            if (Vector3.Distance(_navMeshAgent.transform.position, player.transform.position) < 10f)
+            if (Vector3.Distance(_navMeshAgent.transform.position, player.transform.position) < 40f)
             {
                 _navMeshAgent.SetDestination(player.transform.position);
             }
-            else if (Vector3.Distance(_navMeshAgent.transform.position, player.transform.position) > 10f)
+            else if (Vector3.Distance(_navMeshAgent.transform.position, player.transform.position) > 20f)
             {
                 _fsm.EnterState(FSMStateType.PATROL);
             }

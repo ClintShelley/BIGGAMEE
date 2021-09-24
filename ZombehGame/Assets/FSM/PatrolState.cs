@@ -55,11 +55,11 @@ public class PatrolState : AbstractFSMState
         if (EnteredState)
         {
             
-             if (Vector3.Distance(_navMeshAgent.transform.position, player.transform.position) <= 8f)
+             if (Vector3.Distance(_navMeshAgent.transform.position, player.transform.position) <= 40f)
             {
                 _fsm.EnterState(FSMStateType.ATTACK);
             }
-            else if (Vector3.Distance(_navMeshAgent.transform.position, _patrolPoints[_patrolPointIndex].transform.position) >= 9f)
+            else if (Vector3.Distance(_navMeshAgent.transform.position, _patrolPoints[_patrolPointIndex].transform.position) >= 15f)
             {
                 _fsm.EnterState(FSMStateType.IDLE);
             }
