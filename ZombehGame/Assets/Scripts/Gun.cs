@@ -19,6 +19,7 @@ public class Gun : MonoBehaviour
     [SerializeField] ParticleSystem cartridgeEject;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject metalImpact;
+    [SerializeField] GameObject bloodImpact;
     
     public Camera fpsCam;
     float nextTimetoFire = 0f;
@@ -112,7 +113,7 @@ public class Gun : MonoBehaviour
             nextTimetoFire = Time.time + 1f / fireRate;
             audioSource.PlayOneShot(dryFire);
         }
-        if (Input.GetKeyDown("r") && !reloading && totalAmmo > 0 && Time.time >= nextTimetoFire)
+        if (Input.GetKeyDown("r") && !reloading && totalAmmo > 0 && Time.time >= nextTimetoFire && currentMag != 15)
         {
             animator.Play("Reload", -1, 0);
             ProcessReload();
@@ -149,7 +150,22 @@ public class Gun : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal);
             }
             var hitEffect = metalImpact;
+            if (hit.transform.tag == "Enemy")
+            {
+                 hitEffect = bloodImpact;
+                timeToRemoveImpact = 100f;
+            }
+            else
+            {
+                 hitEffect = metalImpact;
+                timeToRemoveImpact = 100f;
+            }
+          
+       
             Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal * impactForce));
+            
+           
+
             if (Time.time >= timeToRemoveImpact)
             {
                 timeToRemoveImpact = 0;

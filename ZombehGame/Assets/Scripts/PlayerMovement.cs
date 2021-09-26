@@ -13,7 +13,18 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded;
     public float jumpHeight = 3f;
+    float timeSinceStep = 0;
+    AudioSource audioSource;
+    Vector3 move;
+    [SerializeField] AudioClip footstep1;
+    [SerializeField] AudioClip footstep2;
+    [SerializeField] AudioClip footstep3;
+    [SerializeField] AudioClip footstep4;
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -24,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        Vector3 move = transform.right * x + transform.forward * z;
+        move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
@@ -32,5 +43,40 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
+        if (move.x != 0 && isGrounded)
+        {
+            ProcessFootsteps();
+        }
+        print(move.y);
+    }
+    void ProcessFootsteps()
+    {
+   
+        timeSinceStep += Time.deltaTime;
+        if (timeSinceStep > 0.6)
+        {
+            int randomSound = Random.Range(1, 4);
+            switch (randomSound)
+            {
+                case 1:
+                    // print("playedsound1");
+                    audioSource.PlayOneShot(footstep1);
+                    break;
+                case 2:
+                    //print("playedsound2");
+                    audioSource.PlayOneShot(footstep2);
+                    break;
+                case 3:
+                    // print("playedsound3");
+                    audioSource.PlayOneShot(footstep3);
+                    break;
+                case 4:
+                    //  print("playedsound4");
+                    audioSource.PlayOneShot(footstep4);
+                    break;
+            }
+            timeSinceStep = 0;
+        }
+    
     }
 }
