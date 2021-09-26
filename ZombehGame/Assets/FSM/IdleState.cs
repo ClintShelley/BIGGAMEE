@@ -8,10 +8,9 @@ using UnityEngine;
 public class IdleState : AbstractFSMState
 {
     [SerializeField]
-    float _idleDuration = 3f;
+    float _idleDuration = 1f;
 
     float _totalDuration;
-
 
     public override void OnEnable()
     {
@@ -35,8 +34,11 @@ public class IdleState : AbstractFSMState
         if (EnteredState)
         {
             _totalDuration += Time.deltaTime;
-
-            if(_totalDuration >= _idleDuration)
+            if (Vector3.Distance(_navMeshAgent.transform.position, player.transform.position) <= 8f)
+            {
+                _fsm.EnterState(FSMStateType.ATTACK);
+            }
+            if (_totalDuration >= _idleDuration)
             {
                 _fsm.EnterState(FSMStateType.PATROL);
             }

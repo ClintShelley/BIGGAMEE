@@ -19,10 +19,10 @@ public enum FSMStateType
     IDLE,
     PATROL,
     ATTACK,
-    AFK,
     AATTACK,
     PPATROL,
     IDLE2,
+    AFK,
 }
 
 public abstract class AbstractFSMState : ScriptableObject

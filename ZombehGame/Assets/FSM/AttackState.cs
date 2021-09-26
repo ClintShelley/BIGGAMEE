@@ -27,13 +27,19 @@ public class AttackState : AbstractFSMState
     {
         if (EnteredState)
         {
-            if (Vector3.Distance(_navMeshAgent.transform.position, player.transform.position) < 40f)
+            if (Vector3.Distance(_navMeshAgent.transform.position, player.transform.position) < 10f)
             {
                 _navMeshAgent.SetDestination(player.transform.position);
+                var lookPos = player.transform.position - _navMeshAgent.transform.position;
+                lookPos.y = 0;
+                var rotation = Quaternion.LookRotation(lookPos);
+                _navMeshAgent.transform.rotation = Quaternion.Slerp(_navMeshAgent.transform.rotation, rotation, Time.deltaTime * 8f);
+                
+          
             }
-            else if (Vector3.Distance(_navMeshAgent.transform.position, player.transform.position) > 20f)
+            else if (Vector3.Distance(_navMeshAgent.transform.position, player.transform.position) > 10f)
             {
-                _fsm.EnterState(FSMStateType.PATROL);
+                _fsm.EnterState(FSMStateType.IDLE);
             }
         }
     }

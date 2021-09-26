@@ -136,9 +136,10 @@ GameObject:
   - component: {fileID: 3387358177190523015}
   - component: {fileID: 3387358178407359950}
   - component: {fileID: 3387358178407359949}
+  - component: {fileID: 1804037670}
   m_Layer: 0
   m_Name: FirstPersonPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,6 +201,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpHeight: 3
+  footstep1: {fileID: 8300000, guid: 26802240ea249a348acc35be1bb0b24c, type: 3}
+  footstep2: {fileID: 8300000, guid: 0750cdc3edbfbeb4084bb3ae57107d5e, type: 3}
+  footstep3: {fileID: 8300000, guid: 312b8b0762f38d64c982af15a7eb5856, type: 3}
+  footstep4: {fileID: 8300000, guid: 0825e3c33ae5686449dd4ebf7d16295a, type: 3}
 --- !u!82 &3387358178407359950
 AudioSource:
   m_ObjectHideFlags: 0
@@ -212,7 +217,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -256,7 +261,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -314,6 +319,19 @@ MonoBehaviour:
   ammoPickup: {fileID: 8300000, guid: 54e23cec45ed0c1419c061ec72bcd1c9, type: 3}
   e: {fileID: 0}
   interactionRange: 5
+--- !u!114 &1804037670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3387358177190523010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84eddeb3d9892694c8954cdff61f7d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &3387358177746290874
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +501,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3387358178440687865}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 0}
 --- !u!23 &3387358178440687870
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -637,6 +655,10 @@ PrefabInstance:
       propertyPath: recoilCam
       value: 
       objectReference: {fileID: 5507183981351742816}
+    - target: {fileID: 3387358176494977476, guid: 050b8f89784d3b44fa285b5a719411e1, type: 3}
+      propertyPath: bloodImpact
+      value: 
+      objectReference: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
     - target: {fileID: 3387358176494977476, guid: 050b8f89784d3b44fa285b5a719411e1, type: 3}
       propertyPath: startingAmmo
       value: 30

@@ -8,11 +8,16 @@ public class FiniteStateMachine : MonoBehaviour
 {
     AbstractFSMState _currentState;
 
+
     [SerializeField]
     List<AbstractFSMState> _validStates;
     Dictionary<FSMStateType, AbstractFSMState> _fsmStates;
     
 
+    public AbstractFSMState ReturnCurrentState()
+    {
+        return _currentState;
+    }
     public void Awake()
     {
         _currentState = null;
@@ -33,8 +38,8 @@ public class FiniteStateMachine : MonoBehaviour
     public void Start()
     {
         EnterState(FSMStateType.IDLE);
-        EnterState(FSMStateType.AFK);
         EnterState(FSMStateType.IDLE2);
+        EnterState(FSMStateType.AFK);
     }
 
     public void Update()
@@ -42,6 +47,7 @@ public class FiniteStateMachine : MonoBehaviour
         if (_currentState != null)
         {
             _currentState.UpdateState();
+           // print(_currentState);
         }
     }
 
