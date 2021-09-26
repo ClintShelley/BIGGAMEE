@@ -33,6 +33,8 @@ public class FiniteStateMachine : MonoBehaviour
     public void Start()
     {
         EnterState(FSMStateType.IDLE);
+        EnterState(FSMStateType.AFK);
+        EnterState(FSMStateType.IDLE2);
     }
 
     public void Update()
